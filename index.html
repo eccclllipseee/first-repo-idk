@@ -39,19 +39,20 @@
     </section>
 
 
-        <section id="projects">
+            <section id="projects">
         <h2>Проекты</h2>
-        <div class="projects-grid">
-            <article>
-                <h3>Мой первый сайт</h3>
-                <p>Простая страница, созданная в ходе выполнения практических работ.</p>
-            </article>
-            <article>
-                <h3>Будущий пет-проект</h3>
-                <p>Здесь появится описание моего полноценного приложения.</p>
-            </article>
+        <div class="projects-controls" style="margin-bottom: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap; align-items: center;">
+            <input type="text" id="search-input" placeholder="Поиск проекта..." style="padding: 0.5rem; border-radius: 4px; border: 1px solid #ccc; width: 250px;">
+            
+            <div class="filters" style="display: flex; gap: 0.5rem;">
+                <button data-filter="all" class="active">Все</button>
+                <button data-filter="frontend">Frontend</button>
+                <button data-filter="backend">Backend</button>
+            </div>
         </div>
+        <div class="projects-grid" id="projects-grid"></div>
     </section>
+
 
 
     <section id="contact">

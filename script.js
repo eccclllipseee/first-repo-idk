@@ -79,3 +79,56 @@ if (form) {
         }
     });
 }
+
+const projects = [
+    { id: 1, title: "Лендинг кофейни", category: "frontend", description: "Адаптивная вёрстка на CSS Grid и Flexbox." },
+    { id: 2, title: "Бот Telegram", category: "backend", description: "Скрипт для автоматической обработки заказов." },
+    { id: 3, title: "Игра 2048", category: "frontend", description: "Полноценная игровая логика на JavaScript." },
+    { id: 4, title: "API Корзины товаров", category: "backend", description: "Серверная валидация данных и отправка JSON." },
+    { id: 5, title: "Сайт-портфолио", category: "frontend", description: "Текущий проект" }
+];
+
+
+function createCard(project) {
+    return `
+    <article class="project-card" data-category="${project.category}">
+        <h3>${project.title}</h3>
+        <p>${project.description}</p>
+    </article>
+    `;
+}
+
+function renderProjects(list) {
+    const container = document.getElementById("projects-grid");
+    if (container) {
+        container.innerHTML = list.map(createCard).join("");
+    }
+}
+
+renderProjects(projects);
+
+const filterButtons = document.querySelectorAll(".filters button");
+filterButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+        filterButtons.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        
+        const filter = btn.dataset.filter;
+        const filtered = filter === "all" 
+            ? projects 
+            : projects.filter(p => p.category === filter);
+            
+        renderProjects(filtered);
+    });
+});
+
+const searchInput = document.getElementById("search-input");
+if (searchInput) {
+    searchInput.addEventListener("input", () => {
+        const query = searchInput.value.trim().toLowerCase();
+        const filtered = projects.filter(p => 
+            p.title.toLowerCase().includes(query)
+        );
+        renderProjects(filtered);
+    });
+}

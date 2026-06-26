@@ -188,3 +188,26 @@ body.dark-theme textarea {
     min-height: 1.2em;
     margin-bottom: 0.5rem;
 }
+.project-card {
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+body.dark-theme .project-card {
+    background-color: #2a2a2a;
+    color: #eaeaea;
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.15);
+}
+
+.filters button.active {
+    background-color: var(--color-accent);
+    color: white;
+}
