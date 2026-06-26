@@ -1,4 +1,4 @@
-/* Этап 1. Базовые стили и сброс отступов */
+
 * {
     margin: 0;
     padding: 0;
@@ -16,17 +16,17 @@ body {
     line-height: 1.6;
     color: #222;
     background-color: #fafafa;
-    padding-bottom: 50px; /* Отступ снизу для красоты */
+    padding-bottom: 50px; 
 }
 
-/* Общие стили для отступов секций */
+
 section {
     padding: 2rem;
     max-width: 1000px;
     margin: 0 auto;
 }
 
-/* Этап 2. Flexbox для навигации (шапки) */
+
 header {
     display: flex;
     justify-content: space-between;
@@ -48,13 +48,13 @@ nav a {
     transition: 0.2s;
 }
 
-/* Этап 4. Класс для активного состояния меню */
+
 nav a.active {
     text-decoration: underline;
     color: var(--color-accent);
 }
 
-/* Этап 3. Flexbox для карточек проектов */
+
 .projects-grid {
     display: flex;
     flex-wrap: wrap;
