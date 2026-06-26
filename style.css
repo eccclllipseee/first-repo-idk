@@ -56,11 +56,12 @@ nav a.active {
 
 
 .projects-grid {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 1.5rem;
     margin-top: 1rem;
 }
+
 
 .projects-grid article {
     flex: 1 1 280px;
@@ -68,4 +69,35 @@ nav a.active {
     border-radius: 8px;
     padding: 1.5rem;
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.burger {
+    display: none;
+    font-size: 1.8rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .burger {
+        display: block; 
+    }
+    
+    nav {
+        display: none; 
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: var(--color-primary);
+        width: 100%;
+        padding: 1rem;
+        z-index: 10; 
+    }
+    
+    nav.open {
+        display: flex;
+    }
 }
